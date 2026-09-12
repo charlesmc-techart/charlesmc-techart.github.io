@@ -1,7 +1,5 @@
 """Package for working with the curriculum vitae page"""
 
-__author__ = "Charles Mesa Cayobit"
-
 from typing import Any
 
 from flask import Blueprint, render_template
