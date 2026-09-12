@@ -6,4 +6,5 @@ FROM skl_categories AS category
 
 WHERE skill.skill_is_active IS TRUE
 
-ORDER BY category.category_sort_index, skill.skill_sort_index;
+ORDER BY category.category_sort_index, skill.skill_sort_index,
+         skill.skill_name;
