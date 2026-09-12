@@ -15,13 +15,13 @@ def format_date(value: bytes) -> str:
     """Format the date bytes retrieved from a SQLite3 database.
 
     :param value: The date in ISO format
-    :return: `Present` or `MMM ’YY` where `MMM` is the 3-letter abbreviation of the month
+    :return: `Present` or `MMM YYYY` where `MMM` is the 3-letter abbreviation of the month
     """
 
     decoded_value = value.decode("utf-8")
     if decoded_value == "9999-12-31":
         return "Present"
-    return date.fromisoformat(decoded_value).strftime("%b ’%y")
+    return date.fromisoformat(decoded_value).strftime("%b %Y")
 
 
 sqlite3.register_converter("py_date", format_date)
